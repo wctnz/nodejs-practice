@@ -1,0 +1,38 @@
+{{#if errors}}
+  <ul>
+    {{#each errors}}
+      <li>{{msg}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+<form method="POST" action="/users">
+  <div>
+    <label for="user_username">Username *</label>
+    <input type="text" name="user_username" id="user_username">
+  </div>
+
+  <div>
+    <label for="user_email">E-mail *</label>
+    <input type="email" name="user_email" id="user_email">
+  </div>
+
+  <div>
+    <label for="user_password">Password *</label>
+    <input type="password" name="user_password" id="user_password">
+  </div>
+
+  <div>
+    <label for="user_name">Name</label>
+    <input type="text" name="user_name" id="user_name">
+  </div>
+
+  <div>
+    <label for="user_surname">Surname</label>
+    <input type="text" name="user_surname" id="user_surname">
+  </div>
+
+  <div>
+    <input type="submit" value="Sign Up">
+  </div>
+</form>

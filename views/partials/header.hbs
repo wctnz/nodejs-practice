@@ -1,0 +1,33 @@
+<header>
+  <h1>{{main_title}}</h1>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/comments">Comments</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/users">Users</a></li>
+      {{#if current_user}}
+      <li>
+        Logged in as {{current_user.name}} {{current_user.surname}}
+      </li>
+      <li>
+        <form method="POST" action="/sessions?_method=DELETE">
+          <input type="submit" value="Log Out">
+        </form>
+      </li>
+      {{else}}
+        <li><a href="/sessions/new">Log In</a></li>
+        <li><a href="/users/new">Registration</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+</header>
+
+{{#each flash_messages as |msg|}}
+  {{#each msg}}
+    <div class="alert alert-{{@key}}">
+      {{this}}
+    </div>
+  {{/each}}
+{{/each}}
